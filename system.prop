@@ -1,0 +1,5 @@
+#
+# system.prop for degas3g
+#
+
+ro.kernel.qemu=0
