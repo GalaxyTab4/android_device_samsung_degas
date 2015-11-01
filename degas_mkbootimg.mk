@@ -12,7 +12,6 @@ $(INSTALLED_RECOVERYIMAGE_TARGET): device/samsung/degas3g/tools/degas-mkbootimg 
 		$(recovery_ramdisk) \
 		$(recovery_kernel)
 	@echo -e ${CL_CYN}"----- Making recovery image ------"${CL_RST}
-        $(hide) 
 	$(hide) device/samsung/degas3g/tools/degas-mkbootimg $(INTERNAL_RECOVERYIMAGE_ARGS) $(BOARD_MKBOOTIMG_ARGS) --output $@
 	$(hide) $(call assert-max-image-size,$@,$(BOARD_RECOVERYIMAGE_PARTITION_SIZE),raw)
 	@echo -e ${CL_CYN}"Made recovery image: $@"${CL_RST}
