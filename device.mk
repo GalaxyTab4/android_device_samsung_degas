@@ -101,7 +101,8 @@ PRODUCT_PACKAGES += \
 # Graphics
 PRODUCT_PACKAGES += \
 	libion \
-	libHWComposerGC
+	libHWComposerGC \
+	gralloc.mrvl
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/gfx.cfg:system/etc/gfx.cfg \
