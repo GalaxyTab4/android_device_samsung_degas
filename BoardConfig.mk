@@ -177,7 +177,7 @@ BOARD_USES_SECURE_SERVICES := true
 
 # SELinux
 BOARD_SEPOLICY_DIRS += \
-    device/samsung/lt02wifi/sepolicy
+    device/samsung/degas3g/sepolicy
 
 # Recovery
 TARGET_RECOVERY_PIXEL_FORMAT := "RGB_565"
