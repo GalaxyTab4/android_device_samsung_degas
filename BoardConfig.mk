@@ -122,7 +122,7 @@ TARGET_KERNEL_SOURCE := kernel/samsung/degas3g
 TARGET_KERNEL_CONFIG := cyanogenmod_degas3g_defconfig
 BOARD_CUSTOM_MKBOOTIMG := device/samsung/degas3g/tools/degas-mkbootimg
 BOARD_CUSTOM_BOOTIMG_MK := device/samsung/degas3g/degas_mkbootimg.mk
-BOARD_MKBOOTIMG_ARGS := --dt device/samsung/degas3g/rootdir/boot.img-dt --ramdisk_offset 0x01000000
+BOARD_MKBOOTIMG_ARGS := --dt $(PRODUCT_OUT)/dt.img --ramdisk_offset 0x01000000
 
 # LPM
 BOARD_CHARGING_MODE_BOOTING_LPM := true
