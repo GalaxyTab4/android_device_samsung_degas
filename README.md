@@ -13,4 +13,4 @@ Battery | 4000 mAh
 Display | 720 x 1280 pixels, 7.0" 
 Rear Camera  | 3.2 MP, 2048 x 1536 pixels,
 Front Camera | 1.3 MP
-Release Date | April 2015
+Release Date | April 2014
