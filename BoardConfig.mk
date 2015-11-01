@@ -47,7 +47,7 @@ TARGET_BOOTLOADER_BOARD_NAME := PXA1088
 
 BOARD_KERNEL_BASE := 0x10000000
 BOARD_KERNEL_PAGESIZE := 2048
-BOARD_KERNEL_CMDLINE := initrd=0x01400000, 12m rw uart_dma vmalloc=0x10000000 hwdfc=1 qhd_lcd=1 touch_type=0 androidboot.hardware=pxa1088 ddr_mode=1 atcmdmode=1 androidboot.emmc_checksum=3 androidboot.lcd=WVGA androidboot.selinux=disabled
+BOARD_KERNEL_CMDLINE := androidboot.selinux=disabled
 
 TARGET_BOARD_INFO_FILE := device/samsung/degas3g/board-info.txt
 
