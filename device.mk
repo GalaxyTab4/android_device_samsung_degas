@@ -23,10 +23,11 @@ $(call inherit-product, device/common/gps/gps_us_supl.mk)
 
 LOCAL_PATH := device/samsung/degas3g
 
-# Enable higher-res drawables while keeping hdpi as primary source
-PRODUCT_AAPT_CONFIG := normal large mdpi hdpi
+# Enable higher-res drawables while keeping mdpi as primary source
+PRODUCT_AAPT_CONFIG := large mdpi hdpi xhdpi
 PRODUCT_AAPT_PREF_CONFIG := mdpi
 PRODUCT_LOCALES += mdpi
+
 PRODUCT_CHARACTERISTICS := tablet
 
 # Media profiles
@@ -63,10 +64,16 @@ PRODUCT_COPY_FILES += \
 # WiFi
 PRODUCT_PROPERTY_OVERRIDES += \
     wifi.interface=wlan0 \
-    wifi.supplicant_scan_interval=15
+    wifi.supplicant_scan_interval=15 \
+    wifi.softap.interface=wlan0
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf
+
+PRODUCT_PACKAGES += \
+    libMarvellWireless \
+    MarvellWirelessDaemon
+
 
 # Disable SELinux
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -74,6 +81,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Ramdisk
 PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/rootdir/fstab.pxa1088:root/fstab.pxa1088 \
     $(LOCAL_PATH)/rootdir/init.recovery.pxa1088.rc:root/init.recovery.pxa1088.rc \
     $(LOCAL_PATH)/rootdir/init.pxa1088.rc:root/init.pxa1088.rc \
     $(LOCAL_PATH)/rootdir/init.pxa1088.usb.rc:root/init.pxa1088.usb.rc \
@@ -91,6 +99,10 @@ PRODUCT_PACKAGES += \
     com.android.future.usb.accessory
 
 # Graphics
+PRODUCT_PACKAGES += \
+	libion \
+	libHWComposerGC
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/gfx.cfg:system/etc/gfx.cfg \
     $(LOCAL_PATH)/configs/dms.cfg:system/etc/dms.cfg \
@@ -102,6 +114,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Audio 
 PRODUCT_PACKAGES += \
     libasound
+
+# Charger
+PRODUCT_PACKAGES += \
+    charger \
+    charger_res_images
 
 # Feature live wallpaper
 PRODUCT_COPY_FILES += \
@@ -115,6 +132,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.zygote.disable_gl_preload=true \
     ro.cm.hardware.cabc=/sys/class/mdnie/mdnie/cabc \
     ro.bq.gpu_to_cpu_unsupported=1 \
+    dalvik.vm.heapsize=128m
+
+# Enable debugging
+DEFAULT_PROPERTY_OVERRIDES += \
+    ro.secure=0 \
+    ro.allow.mock.location=1 \
+    ro.debuggable=1 \
+    persist.service.adb.enable=1 \
+    persist.sys.usb.config=mtp,adb 
 
 PRODUCT_TAGS += dalvik.gc.type-precise
 
