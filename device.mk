@@ -72,8 +72,23 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
     libMarvellWireless \
-    MarvellWirelessDaemon
+    MarvellWirelessDaemon \
+    rfkill
 
+# Wifi extention tools
+PRODUCT_PACKAGES += \
+	iperf \
+	wireless_tool \
+	iwconfig \
+	iwlist \
+	iwpriv \
+	iwspy \
+	iwgetid \
+	iwevent \
+	ifrename \
+	macadd \
+	WapiCertMgmt \
+	simal 
 
 # Disable SELinux
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -99,6 +114,12 @@ PRODUCT_PACKAGES += \
 
 # Graphics
 PRODUCT_PACKAGES += \
+	libGLESv1_CM_MRVL \
+	libGLESv2_MRVL \
+	libEGL_MRVL \
+	libGLESv2 \
+	libGLESv2SC \
+	libgcu \
 	libion \
 	libHWComposerGC \
 	gralloc.mrvl
