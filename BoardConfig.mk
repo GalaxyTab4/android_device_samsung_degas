@@ -159,20 +159,15 @@ WPA_SUPPLICANT_VERSION := VER_0_8_X
 BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_mrvl
 BOARD_HOSTAPD_DRIVER := NL80211
 BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_mrvl
+BOARD_HAVE_MARVELL_WIFI := true
 BOARD_ENABLE_MARVELL_WIFI := true
 BOARD_WLAN_DEVICE := mrvl
-BOARD_WLAN_VENDOR := MRVL
-WIFI_SDIO_IF_DRIVER_MODULE_PATH  := "/system/lib/modules/mlan.ko"
-WIFI_SDIO_IF_DRIVER_MODULE_NAME  := "mlan"
-WIFI_SDIO_IF_DRIVER_MODULE_ARG   := "fw_name=mrvl/SDIO8887_SDIO_SDIO.bin"
-WIFI_DRIVER_MODULE_PATH := "/system/lib/modules/sd8xxx.ko"
-WIFI_DRIVER_MODULE_NAME := "sd8xxx"
-WIFI_DRIVER_MODULE_ARG  := "drv_mode=5 cfg80211_wext=0xc sta_name=wlan uap_name=wlan wfd_name=p2p max_uap_bss=1 fw_name=mrvl/sd8887_uapsta.bin"
 WIFI_DRIVER_FW_PATH_PARAM := "/proc/mwlan/config"
-WIFI_DRIVER_FW_PATH_STA := "drv_mode=5"
-WIFI_DRIVER_FW_PATH_AP :=  "drv_mode=6"
-WIFI_DRIVER_FW_PATH_P2P := "drv_mode=5"
+WIFI_DRIVER_FW_PATH_STA := "/system/etc/firmware/mrvl/sd8887_uapsta.bin"
+WIFI_DRIVER_FW_PATH_AP :=  "/system/etc/firmware/mrvl/sd8887_uapsta.bin"
+WIFI_DRIVER_FW_PATH_P2P := "/system/etc/firmware/mrvl/sd8887_uapsta.bin"
 MRVL_WIRELESS_DAEMON_API := true
+CONFIG_CTRL_IFACE := true
 
 # Security
 BOARD_USES_SECURE_SERVICES := true
