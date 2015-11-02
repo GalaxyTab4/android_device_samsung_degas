@@ -268,6 +268,7 @@ on post-fs-data
     #mkdir /data/blcr 0775 system system
     # marvell_dut
     insmod /system/lib/modules/mlan.ko
+    insmod /system/lib/modules/mbt8xxx.ko
 
 # MTP permission
 	chmod 0660 /dev/usb_mtp_gadget
