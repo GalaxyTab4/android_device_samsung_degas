@@ -37,6 +37,7 @@ TARGET_CPU_VARIANT := cortex-a9
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_SMP := true
+ARCH_ARM_HAVE_NEON := true
 
 TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
@@ -158,11 +159,12 @@ WPA_SUPPLICANT_VERSION := VER_0_8_X
 BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_mrvl
 BOARD_HOSTAPD_DRIVER := NL80211
 BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_mrvl
-BOARD_WLAN_DEVICE := mrvl8887
+BOARD_ENABLE_MARVELL_WIFI := true
+BOARD_WLAN_DEVICE := mrvl
 BOARD_WLAN_VENDOR := MRVL
 WIFI_SDIO_IF_DRIVER_MODULE_PATH  := "/system/lib/modules/mlan.ko"
 WIFI_SDIO_IF_DRIVER_MODULE_NAME  := "mlan"
-WIFI_SDIO_IF_DRIVER_MODULE_ARG   := ""
+WIFI_SDIO_IF_DRIVER_MODULE_ARG   := "fw_name=mrvl/SDIO8887_SDIO_SDIO.bin"
 WIFI_DRIVER_MODULE_PATH := "/system/lib/modules/sd8xxx.ko"
 WIFI_DRIVER_MODULE_NAME := "sd8xxx"
 WIFI_DRIVER_MODULE_ARG  := "drv_mode=5 cfg80211_wext=0xc sta_name=wlan uap_name=wlan wfd_name=p2p max_uap_bss=1 fw_name=mrvl/sd8887_uapsta.bin"
