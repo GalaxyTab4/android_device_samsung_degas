@@ -39,7 +39,6 @@ __BEGIN_DECLS
 #define HWC_DEVICE_API_VERSION_1_1  HARDWARE_DEVICE_API_VERSION_2(1, 1, HWC_HEADER_VERSION)
 #define HWC_DEVICE_API_VERSION_1_2  HARDWARE_DEVICE_API_VERSION_2(1, 2, HWC_HEADER_VERSION)
 #define HWC_DEVICE_API_VERSION_1_3  HARDWARE_DEVICE_API_VERSION_2(1, 3, HWC_HEADER_VERSION)
-#define HWC_DEVICE_API_VERSION_1_4  HARDWARE_DEVICE_API_VERSION_2(1, 4, HWC_HEADER_VERSION)
 
 enum {
     /* hwc_composer_device_t::set failed in EGL */
@@ -94,7 +93,6 @@ enum {
      * by SurfaceFlinger (just as if compositionType was set to HWC_OVERLAY).
      */
     HWC_SKIP_LAYER = 0x00000001,
-	HWC_IS_CURSOR_LAYER = 0x00000002,
 
     /*
      * HWC_OVERLAY_SKIP_LAYER indicate HWC will not let the layer goto
@@ -121,9 +119,6 @@ enum {
     /* this layer holds the result of compositing the HWC_FRAMEBUFFER layers.
      * Added in HWC_DEVICE_API_VERSION_1_1. */
     HWC_FRAMEBUFFER_TARGET = 3,
-	
-	/* this layer's contents are taken from a sideband buffer stream.*/
-	HWC_SIDEBAND = 4,	
 
     /* this layer will be handled in the HWC, using a blit engine */
     HWC_BLIT = 4,
@@ -254,14 +249,6 @@ enum {
     HWC_DISPLAY_EXTERNAL_BIT    = 1 << HWC_DISPLAY_EXTERNAL,
     HWC_DISPLAY_VIRTUAL_BIT     = 1 << HWC_DISPLAY_VIRTUAL,
 };
-
-enum {
-    HWC_POWER_MODE_OFF      = 0,
-    HWC_POWER_MODE_DOZE     = 1,
-    HWC_POWER_MODE_NORMAL   = 2,
-    HWC_POWER_MODE_DOZE_SUSPEND  = 3,
-};
-
 
 /*****************************************************************************/
 
