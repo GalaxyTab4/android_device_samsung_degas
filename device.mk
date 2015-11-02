@@ -120,7 +120,6 @@ PRODUCT_PACKAGES += \
 	libGLESv2 \
 	libGLESv2SC \
 	libgcu \
-	libion \
 	libHWComposerGC \
 	gralloc.mrvl
 
