@@ -50,7 +50,7 @@ BOARD_KERNEL_BASE := 0x10000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_CMDLINE := androidboot.selinux=disabled
 
-TARGET_BOARD_INFO_FILE := device/samsung/degas3g/board-info.txt
+TARGET_BOARD_INFO_FILE := $(LOCAL_PATH)/board-info.txt
 
 # cFlags
 COMMON_GLOBAL_CFLAGS += -DMRVL_HARDWARE
@@ -103,7 +103,7 @@ VSYNC_EVENT_PHASE_OFFSET_NS := 0
 # Vivante GC1000 GPU.
 ENABLE_HWC_GC_PATH := true
 
-BOARD_EGL_CFG := device/samsung/degas3g/configs/egl.cfg
+BOARD_EGL_CFG := $(LOCAL_PATH)/configs/egl.cfg
 BOARD_HAVE_PIXEL_FORMAT_INFO := true
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 BOARD_USE_MHEAP_SCREENSHOT := true
@@ -121,15 +121,15 @@ BOARD_USES_LEGACY_MMAP := true
 # Inline kernel building
 TARGET_KERNEL_SOURCE := kernel/samsung/degas3g
 TARGET_KERNEL_CONFIG := cyanogenmod_degas3g_defconfig
-BOARD_CUSTOM_MKBOOTIMG := device/samsung/degas3g/tools/degas-mkbootimg
-BOARD_CUSTOM_BOOTIMG_MK := device/samsung/degas3g/degas_mkbootimg.mk
+BOARD_CUSTOM_MKBOOTIMG := $(LOCAL_PATH)/tools/degas-mkbootimg
+BOARD_CUSTOM_BOOTIMG_MK := $(LOCAL_PATH)/degas_mkbootimg.mk
 BOARD_MKBOOTIMG_ARGS := --dt $(PRODUCT_OUT)/dt.img --ramdisk_offset 0x01000000
 
 # LPM
 BOARD_CHARGING_MODE_BOOTING_LPM := true
 
 # CM Hardware
-BOARD_HARDWARE_CLASS := device/samsung/degas3g/cmhw
+BOARD_HARDWARE_CLASS := $(LOCAL_PATH)/cmhw
 
 # Dex
 # Enable dex-preoptimization to speed up the first boot sequence
@@ -149,7 +149,7 @@ BOARD_VOLD_DISC_HAS_MULTIPLE_MAJORS := true
 TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/class/android_usb/f_mass_storage/lun%d/file"
 
 # Bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/degas3g/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_MRVL := true
 
@@ -174,7 +174,7 @@ BOARD_USES_SECURE_SERVICES := true
 
 # SELinux
 BOARD_SEPOLICY_DIRS += \
-    device/samsung/degas3g/sepolicy
+    $(LOCAL_PATH)/sepolicy
 
 # Recovery
 TARGET_RECOVERY_PIXEL_FORMAT := "RGB_565"
@@ -183,8 +183,8 @@ BOARD_USES_MMCUTILS := true
 BOARD_HAS_NO_MISC_PARTITION := true
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_SUPPRESS_EMMC_WIPE := true
-TARGET_RECOVERY_FSTAB := device/samsung/degas3g/rootdir/fstab.pxa1088
-TARGET_RECOVERY_DEVICE_DIRS += device/samsung/degas3g
+TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/fstab.pxa1088
+TARGET_RECOVERY_DEVICE_DIRS += $(LOCAL_PATH)
 RECOVERY_FSTAB_VERSION := 2
 BOARD_RECOVERY_SWIPE := true
 
