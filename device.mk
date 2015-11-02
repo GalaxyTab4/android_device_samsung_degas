@@ -162,6 +162,10 @@ DEFAULT_PROPERTY_OVERRIDES += \
     persist.service.adb.enable=1 \
     persist.sys.usb.config=mtp,adb 
 
+# LCD Density
+DEFAULT_PROPERTY_OVERRIDES =+ \
+    ro.sf.lc_density=213 
+
 PRODUCT_TAGS += dalvik.gc.type-precise
 
 $(call inherit-product, frameworks/native/build/tablet-dalvik-heap.mk)
