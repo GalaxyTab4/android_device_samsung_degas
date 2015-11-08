@@ -1,3 +1,3 @@
-sh device/samsung/degas3g/patches/apply.sh
-add_lunch_combo cm_degas3g-userdebug
+sh device/samsung/degas/patches/apply.sh
+add_lunch_combo cm_degas-userdebug
 

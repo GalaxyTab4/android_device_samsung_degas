@@ -12,7 +12,7 @@ $(INSTALLED_DTIMAGE_TARGET): $(DTBTOOL) $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/u
 	@echo -e ${CL_CYN}"Made DT image: $@"${CL_RST}
 
 ## Overload recoveryimg generation: Same as the original, + --dt arg
-$(INSTALLED_RECOVERYIMAGE_TARGET): device/samsung/degas3g/tools/degas-mkbootimg \
+$(INSTALLED_RECOVERYIMAGE_TARGET): device/samsung/degas/tools/degas-mkbootimg \
 		$(recovery_ramdisk) \
 		$(recovery_kernel)
 	@echo -e ${CL_CYN}"----- Making recovery image ------"${CL_RST}
@@ -22,7 +22,7 @@ $(INSTALLED_RECOVERYIMAGE_TARGET): device/samsung/degas3g/tools/degas-mkbootimg 
 	@echo -e ${CL_CYN}"Made recovery image: $@"${CL_RST}
 
 ## Overload bootimg generation: Same as the original, + --dt arg
-$(INSTALLED_BOOTIMAGE_TARGET): device/samsung/degas3g/tools/degas-mkbootimg $(INTERNAL_BOOTIMAGE_FILES)
+$(INSTALLED_BOOTIMAGE_TARGET): device/samsung/degas/tools/degas-mkbootimg $(INTERNAL_BOOTIMAGE_FILES)
 	$(call pretty,"Target boot image: $@")
 	$(hide) $(DTBTOOL) -o $(INSTALLED_DTIMAGE_TARGET) -p $(KERNEL_OUT)/scripts/dtc/ $(KERNEL_OUT)/arch/arm/boot/dts/
 	$(hide) $(DEGAS_MKBOOTIMG) $(INTERNAL_BOOTIMAGE_ARGS) $(BOARD_MKBOOTIMG_ARGS) --dt $(INSTALLED_DTIMAGE_TARGET) --output $@

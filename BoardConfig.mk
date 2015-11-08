@@ -22,13 +22,13 @@
 #
 
 # Define LOCAL_PATH
-LOCAL_PATH := device/samsung/degas3g
+LOCAL_PATH := device/samsung/degas
 
 # Specific Header
 TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
 
 # Assert 
-TARGET_OTA_ASSERT_DEVICE := degas3g,degas3gxx
+TARGET_OTA_ASSERT_DEVICE := degas,degasxx,degas3g,degas3gxx,degaswifi,degaswifixx
 
 # Arch
 TARGET_ARCH := arm

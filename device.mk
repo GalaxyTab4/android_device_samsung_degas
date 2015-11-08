@@ -14,14 +14,14 @@
 # limitations under the License.
 #
 
-DEVICE_PACKAGE_OVERLAYS += device/samsung/degas3g/overlay/
+DEVICE_PACKAGE_OVERLAYS += device/samsung/degas/overlay/
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 # The gps config appropriate for this device
 $(call inherit-product, device/common/gps/gps_us_supl.mk)
 
-LOCAL_PATH := device/samsung/degas3g
+LOCAL_PATH := device/samsung/degas
 
 # Enable higher-res drawables while keeping mdpi as primary source
 PRODUCT_AAPT_CONFIG := large mdpi hdpi xhdpi
@@ -169,4 +169,4 @@ DEFAULT_PROPERTY_OVERRIDES =+ \
 PRODUCT_TAGS += dalvik.gc.type-precise
 
 $(call inherit-product, frameworks/native/build/tablet-dalvik-heap.mk)
-$(call inherit-product, vendor/samsung/degas-common/degas3g-vendor.mk)
+$(call inherit-product, vendor/samsung/degas-common/degaswifi-vendor.mk)

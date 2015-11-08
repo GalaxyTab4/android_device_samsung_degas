@@ -1,4 +1,4 @@
-Device configuration for Samsung Galaxy Tab 4 7.0 3G (degas3g)
+Device configuration for Samsung Galaxy Tab 4 7.0 (degas)
 ==============================================================
 
 Basic   | Spec Sheet

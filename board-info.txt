@@ -1,4 +1,4 @@
 require board=pxa1088
-require version-bootloader=T231XXU0ANJ4
-require version-baseband=T231XXU0ANJ4
+#require version-bootloader=T231XXU0ANJ4
+#require version-baseband=T231XXU0ANJ4
 

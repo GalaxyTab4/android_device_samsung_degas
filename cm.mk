@@ -15,7 +15,7 @@
 #
 
 # Release name
-PRODUCT_RELEASE_NAME := degas3g
+PRODUCT_RELEASE_NAME := degas
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 1280
@@ -25,18 +25,18 @@ TARGET_SCREEN_WIDTH := 720
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
 # Inherit device configuration
-$(call inherit-product, device/samsung/degas3g/full_degas3g.mk)
+$(call inherit-product, device/samsung/degas/full_degas.mk)
 
 ## Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := degas3g
-PRODUCT_NAME := cm_degas3g
+PRODUCT_DEVICE := degas
+PRODUCT_NAME := cm_degas
 PRODUCT_BRAND := samsung
-PRODUCT_MODEL := SM-T231
+PRODUCT_MODEL := SM-T23X
 PRODUCT_MANUFACTURER := samsung
 
 #Set build fingerprint / ID / Prduct Name ect.
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRODUCT_NAME=degas3gxx \
-    TARGET_DEVICE=degas3g \
-    BUILD_FINGERPRINT="samsung/degas3gxx/degas3g:4.4.2/KOT49H/T231XXU0ANJ4:user/release-keys" \
-    PRIVATE_BUILD_DESC="degas3gxx-user 4.4.2 KOT49H T231XXU0ANJ4 release-keys"
+    PRODUCT_NAME=degasxx \
+    TARGET_DEVICE=degas \
+    BUILD_FINGERPRINT="samsung/degasxx/degas:4.4.2/KOT49H/T231XXU0ANJ4:user/release-keys" \
+    PRIVATE_BUILD_DESC="degasxx-user 4.4.2 KOT49H T231XXU0ANJ4 release-keys"
