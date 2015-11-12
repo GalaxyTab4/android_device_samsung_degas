@@ -3,3 +3,4 @@
 #
 
 ro.kernel.qemu=0
+ro.sf.lcd_density=213
