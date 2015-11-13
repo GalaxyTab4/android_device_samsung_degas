@@ -97,12 +97,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.boot.selinux=disabled
 
 # Ramdisk
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/fstab.pxa1088:root/fstab.pxa1088 \
-    $(LOCAL_PATH)/rootdir/init.pxa1088.rc:root/init.pxa1088.rc \
-    $(LOCAL_PATH)/rootdir/init.pxa1088.usb.rc:root/init.pxa1088.usb.rc \
-    $(LOCAL_PATH)/rootdir/init.pxa1088.tel.rc:root/init.pxa1088.tel.rc \
-    $(LOCAL_PATH)/rootdir/ueventd.pxa1088.rc:root/ueventd.pxa1088.rc
+PRODUCT_PACKAGES += \
+    fstab.pxa1088 \
+    init.pxa1088.rc \
+    init.pxa1088.tel.rc \
+    init.pxa1088.usb.rc \
+    init.wifi.rc \
+    ueventd.pxa1088.rc
 
 # GPS
 PRODUCT_COPY_FILES += \
