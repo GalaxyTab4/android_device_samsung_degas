@@ -1,8 +1,11 @@
+# Permissions
+etc/permissions/android.hardware.consumerir.xml
 bin/rfkill
 bin/macloader
 bin/mfgloader
 bin/wlandutservice
 #
+lib/libsecril-client.so
 lib/libnetcmdiface.so
 lib/libwvm.so
 # FIRMWARE
@@ -14,6 +17,7 @@ etc/firmware/mrvl/reg_alpha2
 etc/firmware/mrvl/sd8887_uapsta.bin
 etc/firmware/mrvl/txpwrlimit_cfg.bin
 # HAL
+lib/hw/consumerir.mrvl.so
 lib/hw/gralloc.mrvl.so
 lib/hw/hwcomposer.mrvl.so
 # EGL
