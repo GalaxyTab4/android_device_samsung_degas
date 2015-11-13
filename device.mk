@@ -168,4 +168,4 @@ DEFAULT_PROPERTY_OVERRIDES =+ \
 PRODUCT_TAGS += dalvik.gc.type-precise
 
 $(call inherit-product, frameworks/native/build/tablet-dalvik-heap.mk)
-$(call inherit-product, vendor/samsung/degas-common/degaswifi-vendor.mk)
+$(call inherit-product, vendor/samsung/degas/degaswifi-vendor.mk)

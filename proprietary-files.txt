@@ -1,0 +1,25 @@
+bin/rfkill
+bin/macloader
+# FIRMWARE
+etc/firmware/mrvl/SDIO8887_SDIO_SDIO.bin
+etc/firmware/mrvl/WlanCalData_ext.conf
+etc/firmware/mrvl/bt_cal_data.conf
+etc/firmware/mrvl/bt_init_cfg.conf
+etc/firmware/mrvl/reg_alpha2
+etc/firmware/mrvl/sd8887_uapsta.bin
+etc/firmware/mrvl/txpwrlimit_cfg.bin
+# HAL
+lib/hw/gralloc.mrvl.so
+lib/hw/hwcomposer.mrvl.so
+# EGL
+lib/egl/libEGL_MRVL.so
+lib/egl/libGLESv1_CM_MRVL.so
+lib/egl/libGLESv2_MRVL.so
+lib/libGAL.so
+lib/libGLESv2SC.so
+lib/libgputex.so
+lib/libgcu.so
+lib/libmvmem.so
+lib/libion.so
+
+

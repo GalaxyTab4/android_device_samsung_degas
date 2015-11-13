@@ -189,4 +189,4 @@ RECOVERY_FSTAB_VERSION := 2
 BOARD_RECOVERY_SWIPE := true
 
 # Use the non-open-source parts, if they're present
--include vendor/samsung/degas-common/BoardConfigVendor.mk
+-include vendor/samsung/degas/BoardConfigVendor.mk
