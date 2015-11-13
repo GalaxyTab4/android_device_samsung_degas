@@ -66,13 +66,16 @@ PRODUCT_PROPERTY_OVERRIDES += \
     wifi.supplicant_scan_interval=15 \
     wifi.softap.interface=wlan0
 
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf
-
+# Wifi
 PRODUCT_PACKAGES += \
-    libMarvellWireless \
+    hostapd \
     MarvellWirelessDaemon \
-    rfkill
+    wpa_supplicant \
+    wpa_supplicant.conf
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/wifi/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
+    $(LOCAL_PATH)/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf
 
 # Wifi extention tools
 PRODUCT_PACKAGES += \
@@ -168,4 +171,4 @@ DEFAULT_PROPERTY_OVERRIDES =+ \
 PRODUCT_TAGS += dalvik.gc.type-precise
 
 $(call inherit-product, frameworks/native/build/tablet-dalvik-heap.mk)
-$(call inherit-product, vendor/samsung/degas/degaswifi-vendor.mk)
+$(call inherit-product, vendor/samsung/degas/degas-vendor.mk)
