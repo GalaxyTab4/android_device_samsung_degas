@@ -120,7 +120,7 @@ BOARD_USES_LEGACY_MMAP := true
 
 # Inline kernel building
 TARGET_KERNEL_SOURCE := kernel/samsung/degas
-TARGET_KERNEL_CONFIG := cyanogenmod_degaswifi_defconfig
+TARGET_KERNEL_CONFIG := cyanogenmod_degas_defconfig
 BOARD_CUSTOM_MKBOOTIMG := $(LOCAL_PATH)/tools/degas-mkbootimg
 BOARD_CUSTOM_BOOTIMG_MK := $(LOCAL_PATH)/mkbootimg.mk
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01000000
@@ -162,7 +162,8 @@ BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_mrvl
 BOARD_HAVE_MARVELL_WIFI := true
 BOARD_ENABLE_MARVELL_WIFI := true
 BOARD_WLAN_DEVICE := mrvl
-WIFI_DRIVER_FW_PATH_PARAM := "/proc/mwlan/config"
+WIFI_DRIVER_MODULE_ARG := "cfg80211_wext=12 sta_name=wlan uap_name=wlan wfd_name=p2p fw_name=/system/etc/firmware/mrvl/sd8887_uapsta.bin"
+WIFI_DRIVER_FW_PATH_PARAM := "/sys/module/sd8xxx/parameters"
 WIFI_DRIVER_FW_PATH_STA := "/system/etc/firmware/mrvl/sd8887_uapsta.bin"
 WIFI_DRIVER_FW_PATH_AP :=  "/system/etc/firmware/mrvl/sd8887_uapsta.bin"
 WIFI_DRIVER_FW_PATH_P2P := "/system/etc/firmware/mrvl/sd8887_uapsta.bin"
@@ -183,7 +184,7 @@ BOARD_USES_MMCUTILS := true
 BOARD_HAS_NO_MISC_PARTITION := true
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_SUPPRESS_EMMC_WIPE := true
-TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/fstab.pxa1088
+TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/fstab.pxa1088
 TARGET_RECOVERY_DEVICE_DIRS += $(LOCAL_PATH)
 RECOVERY_FSTAB_VERSION := 2
 BOARD_RECOVERY_SWIPE := true
