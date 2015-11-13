@@ -60,6 +60,10 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
     frameworks/native/data/etc/tablet_core_hardware.xml:system/etc/permissions/tablet_core_hardware.xml
 
+# GRAPHICS
+PRODUCT_PACKAGES += \
+    libHWComposerGC
+
 # WiFi
 PRODUCT_PROPERTY_OVERRIDES += \
     wifi.interface=wlan0 \
@@ -114,17 +118,6 @@ PRODUCT_COPY_FILES += \
 # Misc
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory
-
-# Graphics
-PRODUCT_PACKAGES += \
-	libGLESv1_CM_MRVL \
-	libGLESv2_MRVL \
-	libEGL_MRVL \
-	libGLESv2 \
-	libGLESv2SC \
-	libgcu \
-	libHWComposerGC \
-	gralloc.mrvl
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/gfx.cfg:system/etc/gfx.cfg \
