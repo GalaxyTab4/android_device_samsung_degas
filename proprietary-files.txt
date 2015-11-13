@@ -1,5 +1,10 @@
 bin/rfkill
 bin/macloader
+bin/mfgloader
+bin/wlandutservice
+#
+lib/libnetcmdiface.so
+lib/libwvm.so
 # FIRMWARE
 etc/firmware/mrvl/SDIO8887_SDIO_SDIO.bin
 etc/firmware/mrvl/WlanCalData_ext.conf
